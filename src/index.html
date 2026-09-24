@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Math Note</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <aside id="sidebar">
+      <div class="sidebar-head">
+        <span class="sidebar-title">Notes</span>
+        <div class="sidebar-actions">
+          <button id="help-btn" class="icon-btn" title="Syntax help" aria-label="Syntax help">?</button>
+          <button id="new-note" class="icon-btn" title="New note (⌘N)" aria-label="New note">+</button>
+        </div>
+      </div>
+      <ul id="note-list"></ul>
+      <div id="help" class="help" hidden>
+        <div class="help-title">How to calculate</div>
+        <table class="cheatsheet">
+          <tr><td><code>2 + 2 =</code></td><td>shows <span class="res">4</span></td></tr>
+          <tr><td><code>3 * 4 = area</code></td><td>stores <b>area</b>, shows <span class="res">= 12</span></td></tr>
+          <tr><td><code>area / 2 =</code></td><td>uses the variable</td></tr>
+          <tr><td><code>r = 5</code></td><td>defines <b>r</b></td></tr>
+          <tr><td><code>2 pi r =</code></td><td>implicit multiplication</td></tr>
+          <tr><td><code>2 + 2 = 4</code></td><td>checks your answer <span class="res check">✓</span></td></tr>
+          <tr><td><code>sqrt(16) + 2^3 =</code></td><td>functions and powers</td></tr>
+          <tr><td><code>5! · 50% · 10 mod 3</code></td><td>factorial, percent, modulo</td></tr>
+        </table>
+        <div class="help-note">Words before a formula are ignored, so <code>The total is 3 * 4 =</code> works too.</div>
+      </div>
+    </aside>
+
+    <main id="main">
+      <div id="tabbar" role="tablist"></div>
+
+      <section id="workspace" hidden>
+        <input id="title" type="text" placeholder="Untitled" spellcheck="false" autocomplete="off" />
+        <div id="editor">
+          <pre id="mirror" aria-hidden="true"></pre>
+          <textarea id="input" wrap="off" spellcheck="false" autocapitalize="off" autocorrect="off"
+            placeholder="Take notes. End a line with = to calculate, e.g.  2 + 2 ="></textarea>
+        </div>
+        <div id="statusbar">
+          <span id="status-vars" class="status-vars"></span>
+          <span id="status-save" class="status-save"></span>
+        </div>
+      </section>
+
+      <section id="empty" class="empty">
+        <div class="empty-mark">=</div>
+        <h1>Math Note</h1>
+        <p>Create a note with <kbd>⌘N</kbd> or the <b>+</b> button.</p>
+        <table class="cheatsheet">
+          <tr><td><code>2 + 2 =</code></td><td><span class="res">4</span></td></tr>
+          <tr><td><code>3 * 4 = area</code></td><td><span class="res">= 12</span></td></tr>
+          <tr><td><code>area / 2 =</code></td><td><span class="res">6</span></td></tr>
+          <tr><td><code>r = 5</code></td><td></td></tr>
+          <tr><td><code>2 pi r =</code></td><td><span class="res">31.4159265359</span></td></tr>
+          <tr><td><code>2 + 2 = 4</code></td><td><span class="res check">✓</span></td></tr>
+        </table>
+      </section>
+    </main>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "math-note",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A local notes app that evaluates the maths you write",
+  "scripts": {
+    "tauri": "tauri",
+    "dev": "tauri dev",
+    "build": "tauri build"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.11.5"
+  }
+}
